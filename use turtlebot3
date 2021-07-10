@@ -1,0 +1,16 @@
+cd catkin_ws 
+source devel/setup.bash
+export TURLEBOT3+MODEL=waffle_pi
+roslaunch turlebot3+gazebo turlebot3_would.launch
+source devel/setup.bash
+export TURLEBOT3+MODEL=waffle_pi
+roslaunch turlebot3_slam turlebot3_slam.launch slam_methods:=gmapping
+source devel/setup.bash
+export TURLEBOT3+MODEL=waffle_pi
+roslaunch turlebot3 teleop turtlebot3_teleop_key.launch
+source devel/setup.bas
+source devel/setup.bash
+rosrun map_server map_saver -f ~/map
+source devel/setup.bash
+export TURLEBOT3+MODEL=waffle_pi
+roslaunch turlebot3_navigation turlebot3_navigation.launch map_file:=$/map.yaml
